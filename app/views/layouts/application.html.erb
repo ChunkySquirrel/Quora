@@ -7,9 +7,42 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= link_to 'Quora', root_path , :class => "navbar-brand"%>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+
+    <ul class="navbar-nav ml-auto">
+      <b>
+      <li class="nav-item active">
+
+        <%= link_to current_user.name, edit_user_registration_path , :class => "nav-link" if user_signed_in? %>
+
+      </li>
+</b>
+      <li class="nav-item active">
+        <%= link_to "Login", new_user_session_path , :class => "nav-link" unless user_signed_in? %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "Sign Up", new_user_registration_path , :class => "nav-link" unless user_signed_in? %>
+
+      </li>
+      <li class="nav-item">
+        <%= link_to "Logout", destroy_user_session_path, :class => "nav-link" ,:method => :delete if user_signed_in?%>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
     <%= yield %>
   </body>
 </html>
