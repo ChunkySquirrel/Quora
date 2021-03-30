@@ -27,4 +27,5 @@
 
 <br>
 
-<%= link_to 'New Question', new_question_path %>
+<%= link_to 'New Question', new_question_path  if user_signed_in? %>
+<%= link_to 'Sign in to create a new question', new_user_session_path  unless user_signed_in? %>
