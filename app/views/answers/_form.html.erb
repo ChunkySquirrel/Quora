@@ -1,7 +1,10 @@
-<%= form_with(model: answer, local: true) do |form| %>
+
+<div class="container">
+
+<%= form_for [@question, @answer] do |form| %>
   <% if answer.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
+      <h2><%= pluralize(answer.errors.count, "error") %> prohibited this review from being saved:</h2>
 
       <ul>
         <% answer.errors.full_messages.each do |message| %>
@@ -11,22 +14,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :question_id %>
-    <%= form.number_field :question_id %>
-  </div>
-
-  <div class="field">
+  <div class="form-group">
     <%= form.label :body %>
     <%= form.text_area :body %>
   </div>
+
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+</div>
