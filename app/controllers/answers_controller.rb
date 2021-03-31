@@ -3,7 +3,6 @@ class AnswersController < ApplicationController
   before_action :set_question
   before_action :authenticate_user!, except: [:index, :show]
   before_action :authenticate_user!, only: [:edit, :update, :create, :destroy]
-  before_action :owner?, only: %i[edit destroy]
   # GET /answers or /answers.json
   def index
     @answers = Answer.all

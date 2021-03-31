@@ -23,17 +23,21 @@
 <h3>No answer yet, <%= link_to "you could be the first one to answer this question!", new_question_answer_path(@question) %> | </h3>
 
 <% else %>
+
   <% @question.answers.each do |answer| %>
-  <div class="reviews">
 
-    <p><%= answer.body %></p>
-        <% if current_user == answer.user %>
-    <%= link_to 'Edit', edit_question_answer_path(@question, answer) if answer.user == current_user  %>
-    <%= link_to 'Delete', question_answer_path(@question, answer), method: :delete  if answer.user == current_user  %>
+<div style="border:1px solid black;">
 
-        <% end %>
+  <p><%= answer.body %></p>
+  <b>Answered by <%= answer.user.name %></b>
+      <% if current_user == answer.user %>
+      <%= link_to 'Edit', edit_question_answer_path(@question, answer) if answer.user == current_user  %>
+      <%= link_to 'Delete', question_answer_path(@question, answer), method: :delete  if answer.user == current_user  %>
+      <% end %>
+    </div>
 
-  </div>
+
  <%end%>
+
  <%end%>
 </div>
