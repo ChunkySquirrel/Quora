@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, :controllers => { :registrations => "registrations"}
+=======
+  devise_for :users, :controllers => { :registrations => "registrations", :confirmations => "confirmations"}
+>>>>>>> 5e11c020d0a3417398bd64138ecdf6d3ce2e66aa
     devise_scope :user do
       get 'login', to: 'devise/sessions#new'
     end

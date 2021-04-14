@@ -20,6 +20,17 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
 
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+
+      <b><%= link_to 'New Question', new_question_path, :class => "nav-link"  if user_signed_in? %></b>
+    </li>
+    <li class="nav-item active">
+
+      <b><%= link_to 'Sign in to create a new question', new_user_session_path, :class => "nav-link" unless user_signed_in? %></b>
+    </li>
+
+    </ul>
     <ul class="navbar-nav ml-auto">
       <b>
       <li class="nav-item active">
@@ -43,6 +54,8 @@
 
   </div>
 </nav>
+  <%= notice %>
+    <%= alert %>
     <%= yield %>
   </body>
 </html>
