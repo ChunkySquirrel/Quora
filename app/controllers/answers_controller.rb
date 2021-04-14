@@ -55,7 +55,7 @@ class AnswersController < ApplicationController
   def destroy
     @answer.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: "Answer was successfully destroyed." }
+      format.html { redirect_to @question, notice: "Answer was successfully destroyed." }
       format.json { head :no_content }
     end
   end
