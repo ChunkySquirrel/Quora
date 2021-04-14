@@ -1,5 +1,16 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  ActionMailer::Base.smtp_settings = {
+       :address => 'smtp.sendgrid.net',
+       :port => '587',
+       :authentication => :plain,
+       :user_name => Rails.application.credentials.dig(:user_name),
+       :password => Rails.application.credentials.dig(:password),
+       :domain => 'heroku.com',
+       :enable_starttls_auto => true
+     }
+     config.action_mailer.delivery_method = :smtp
+   config.action_mailer.default_url_options ={:host => 'quora4tra.herokuapp.com', :protocol => 'https'}
 
   # Code is not reloaded between requests.
   config.cache_classes = true
