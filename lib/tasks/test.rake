@@ -7,6 +7,7 @@ namespace :sample do
 
   flash.now[:error] = "Ask a question"
   render :index
+
 end
 
           end
