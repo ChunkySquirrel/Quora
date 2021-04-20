@@ -10,7 +10,12 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
   # renders app/views/admin/posts/_some_partial.html.erb
- 
+ div class: 'custom-class' do
+           
+            @metric = Question.group(:title).count # whatever data you pass to chart
+           render partial: 'metrics/partial_name', locals: {metric: @metric}
+      
+          end
 
     # renders app/views/admin/posts/_some_partial.html.erb
  

@@ -1,0 +1,14 @@
+<h1 style="text-align:center">Charts Page</h1>
+</br>
+</br>
+<p style="text-align:center">Questions chart(By date created_at)</p>
+<%= pie_chart Question.group_by_day(:created_at).count %></br>
+
+
+<p style="text-align:center">Users chart(By date name)</p>
+<%= pie_chart User.group(:name).count %><br/>
+
+<p style="text-align:center">Question chart(By day of the week,nubmer of questions)</p>
+<%= column_chart Question.group_by_day_of_week(:created_at, format: "%a").count %>
+
+
