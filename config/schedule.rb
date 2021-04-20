@@ -1,3 +1,6 @@
-every 2.minutes do
-  rake 'task_namespace:send_mail'
-end
+every 1.minute do
+
+    rake 'sample:test'
+
+
+  end
