@@ -3,12 +3,11 @@ namespace :sample do
      task :test => [ :environment ] do
 
 
-       def bye
+       def show
 
-  flash.now[:error] = "Ask a question"
-  render :index
+        render "index", :alert => 'Ask a question!'
 
-end
+      end
 
           end
         end
