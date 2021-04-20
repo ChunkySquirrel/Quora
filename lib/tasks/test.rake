@@ -3,10 +3,11 @@ namespace :sample do
      task :test => [ :environment ] do
 
 
-       def index
+       def show
 
-         flash.now[:notice] = "Leave a Question"
-       end
+        render "index", :alert => 'Ask a question!'
+
+      end
 
           end
         end
