@@ -1,5 +1,8 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, only: [:edit, :update, :create, :destroy]
+  before_action :owner?, only: %i[edit destroy]
 
   # GET /questions or /questions.json
   def index
@@ -21,7 +24,9 @@ class QuestionsController < ApplicationController
 
   # POST /questions or /questions.json
   def create
+
     @question = Question.new(question_params)
+    @question.user_id = current_user.id
 
     respond_to do |format|
       if @question.save
@@ -58,6 +63,11 @@ class QuestionsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def owner?
+    unless current_user == @question.user
+      redirect_back fallback_location: root_path, notice: 'User is not owner'
+    end
+  end
     def set_question
       @question = Question.find(params[:id])
     end

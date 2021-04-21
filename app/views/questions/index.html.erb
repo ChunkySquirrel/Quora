@@ -2,28 +2,15 @@
 
 <h1>Questions</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
+
     <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.user_id %></td>
-        <td><%= question.title %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <h1><%= link_to question.title, question, :class => "text-body"%></h1>
+        <% if user_signed_in? && current_user== question.user %>
+        <%= link_to 'Edit', edit_question_path(question) %>
+        <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+
     <% end %>
-  </tbody>
-</table>
 
 <br>
-
-<%= link_to 'New Question', new_question_path %>
