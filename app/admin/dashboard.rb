@@ -8,7 +8,11 @@ ActiveAdmin.register_page "Dashboard" do
         small I18n.t("active_admin.dashboard_welcome.call_to_action")
       end
     end
+  div class: 'custom-class' do
 
+   @metric = Question.group(:attribute).count # whatever data you pass to chart
+   render partial: 'charts/charts', locals: {metric: @metric}
+ end
     # Here is an example of a simple dashboard with columns and panels.
     #
     # columns do
