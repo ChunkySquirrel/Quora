@@ -84,10 +84,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-<<<<<<< HEAD
     chartkick (4.0.3)
-=======
->>>>>>> b9ed7c9f7f86157d91c35115327b671fcde44ab3
     childprocess (3.0.0)
     chronic (0.10.2)
     concurrent-ruby (1.1.8)
@@ -105,11 +102,8 @@ GEM
     formtastic_i18n (0.6.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-<<<<<<< HEAD
     groupdate (5.2.2)
       activesupport (>= 5)
-=======
->>>>>>> b9ed7c9f7f86157d91c35115327b671fcde44ab3
     has_scope (0.8.0)
       actionpack (>= 5.2)
       activesupport (>= 5.2)
@@ -274,13 +268,9 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
-<<<<<<< HEAD
   chartkick
   devise (~> 4.7)
   groupdate
-=======
-  devise (~> 4.7)
->>>>>>> b9ed7c9f7f86157d91c35115327b671fcde44ab3
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg
