@@ -6,8 +6,11 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.3.0",
+<<<<<<< HEAD
     "chart.js": "^3.1.1",
     "chartkick": "^4.0.3",
+=======
+>>>>>>> b9ed7c9f7f86157d91c35115327b671fcde44ab3
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",

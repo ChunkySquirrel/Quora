@@ -6,6 +6,7 @@ ActiveAdmin.register_page "Dashboard" do
       span class: "blank_slate" do
         span I18n.t("active_admin.dashboard_welcome.welcome")
         small I18n.t("active_admin.dashboard_welcome.call_to_action")
+<<<<<<< HEAD
         
       end
     end
@@ -19,6 +20,11 @@ ActiveAdmin.register_page "Dashboard" do
 
     # renders app/views/admin/posts/_some_partial.html.erb
  
+=======
+      end
+    end
+
+>>>>>>> b9ed7c9f7f86157d91c35115327b671fcde44ab3
     # Here is an example of a simple dashboard with columns and panels.
     #
     # columns do

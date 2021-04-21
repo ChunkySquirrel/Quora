@@ -5,7 +5,11 @@ ActiveAdmin.register Answer do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
+<<<<<<< HEAD
   # permit_params :user_id, :question_id, :body
+=======
+  permit_params :user_id, :question_id, :body
+>>>>>>> b9ed7c9f7f86157d91c35115327b671fcde44ab3
   #
   # or
   #
@@ -14,5 +18,9 @@ ActiveAdmin.register Answer do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> b9ed7c9f7f86157d91c35115327b671fcde44ab3
 end

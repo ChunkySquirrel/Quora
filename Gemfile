@@ -25,8 +25,12 @@ gem 'jbuilder', '~> 2.7'
 gem 'activeadmin', '~> 2.9'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+<<<<<<< HEAD
 gem 'groupdate'
 gem "chartkick"
+=======
+
+>>>>>>> b9ed7c9f7f86157d91c35115327b671fcde44ab3
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
