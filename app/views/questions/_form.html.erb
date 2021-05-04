@@ -1,6 +1,4 @@
-<% content_for(:body_attributes) do %>
-    data-turbolinks="false"
-  <% end %>
+
 <%= form_with(model: question, local: true) do |form| %>
   <% if question.errors.any? %>
     <div id="error_explanation">
