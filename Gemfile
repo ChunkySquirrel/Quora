@@ -27,7 +27,6 @@ gem 'jbuilder', '~> 2.7'
 gem 'activeadmin', '~> 2.9'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-gem 'activeadmin', '~> 2.9'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'arctic_admin'
