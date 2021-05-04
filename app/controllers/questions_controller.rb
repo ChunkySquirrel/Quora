@@ -87,6 +87,6 @@ end
 
     # Only allow a list of trusted parameters through.
     def question_params
-      params.require(:question).permit(:user_id, :title)
+      params.require(:question).permit(:user_id, :title, category_ids:[])
     end
 end
