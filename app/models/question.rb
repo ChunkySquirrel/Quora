@@ -1,4 +1,5 @@
 class Question < ApplicationRecord
+  searchkick
   has_many :answers
   belongs_to :user
   has_many :users, through: :answers

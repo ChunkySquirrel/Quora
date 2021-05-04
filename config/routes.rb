@@ -13,6 +13,9 @@ Rails.application.routes.draw do
       get '/users/sign_out' => 'devise/sessions#destroy'
     end
   resources :questions do
+    collection do
+      get 'search'
+  end
     resources :answers
     collection {post :import}
 end

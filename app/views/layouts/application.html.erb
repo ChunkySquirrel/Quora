@@ -49,12 +49,17 @@
 
     </ul>
     <ul class="navbar-nav ml-auto">
+      <%= form_tag search_questions_path, method: :get, class: "form-inline my-2 my-lg-0", role: "search" do%>
+      <%= text_field_tag :search, params[:search], class: "form-control"%>
+      <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+      <%end%>
       <b>
       <li class="nav-item active">
 
         <%= link_to current_user.name, edit_user_registration_path , :class => "nav-link" if user_signed_in? %>
 
       </li>
+
 </b>
       <li class="nav-item active">
         <%= link_to "Login", new_user_session_path , :class => "nav-link" unless user_signed_in? %>
