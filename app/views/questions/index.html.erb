@@ -5,7 +5,7 @@
 
 
     <% @questions.each do |question| %>
-        <h1><%= link_to question.title, question, :class => "text-body"%></h1>
+        <h1><%= link_to question.title.html_safe, question, :class => "text-body"%></h1>
         <% if user_signed_in? && current_user== question.user %>
         <%= link_to 'Edit', edit_question_path(question) %>
         <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>

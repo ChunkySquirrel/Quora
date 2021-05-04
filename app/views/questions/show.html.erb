@@ -4,7 +4,7 @@
 <div class="container" align="center">
 
 <p>
-  <strong><%= @question.title %></strong>
+  <%= @question.title.html_safe %>
   <p>Question by <b><%= @question.user.name %></b></p>
 </p>
 
