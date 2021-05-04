@@ -23,6 +23,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'activeadmin', '~> 2.9'
+# Use Active Storage variant
+# gem 'image_processing', '~> 1.2'
+gem 'activeadmin', '~> 2.9'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'arctic_admin'
@@ -36,6 +39,9 @@ gem "chartkick"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'whenever'
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.4.2', require: false
+
 group :production do
 end
 
