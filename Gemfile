@@ -23,6 +23,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'activeadmin', '~> 2.9'
+# Use Active Storage variant
+# gem 'image_processing', '~> 1.2'
+gem 'activeadmin', '~> 2.9'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'arctic_admin'
@@ -36,6 +39,9 @@ gem "chartkick"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'whenever'
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.4.2', require: false
+
 group :production do
 end
 
@@ -45,6 +51,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
