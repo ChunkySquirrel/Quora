@@ -1,20 +1,28 @@
+
 <div class="container" style="max-width:100%;">
 
 <div class="row">
+  <div class="col-sm" style="max-width:10%; margin:1%;">
+  asdfsdaf
+  </div>
+  <div class="col-sm">
+
     <% @questions.each do |question| %>
-    <div class="card" style="width: 18rem; margin:10px;">
+    <div class="card" style="max-width: 100%;background-color:#fafafa;margin:1%;">
          <div class="card-body">
-        <h5 class="card-title"><%= question.title.html_safe %></h5>
+        <h5 class="card-title"><%= link_to question.title.html_safe, question, :class => "text-body"%></h5>
 
 
-        <%= link_to 'Open qustion', question, class: "btn btn-primary" %>
         <% if current_user == question.user %>
-        <%= link_to 'Edit', edit_question_path(question) %>
-        <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Edit', edit_question_path(question), class: "btn btn-primary"  %>
+        <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary"  %>
     <% end %>
   </div>
 </div>
 
     <% end %>
+  </div>
+
+
   </div>
 </div>
