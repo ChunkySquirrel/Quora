@@ -5,12 +5,18 @@ class QuestionsController < ApplicationController
   before_action :owner?, only: %i[edit destroy]
 
 
-
+  def search
+     if params[:search].present?
+       @questions = Question.search(params[:search])
+     else
+       @questions = Question.all
+   end
+ end
   # GET /questions or /questions.json
   def index
     @questions = Question.all
   end
-  
+
 def import
   Question.import(params[:file])
   redirect_to '/admin/questions', notice: "Suscces my brotha"
