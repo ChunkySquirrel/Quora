@@ -10,7 +10,8 @@
 // Active Admin's got SASS!
 @import 'formadmin/formadmin';
 $primary-color: #c0ffee;
-
+@import 'activeadmin/quill_editor/quill.snow';
+@import 'activeadmin/quill_editor_input';
 // Overriding any non-variable Sass must be done after the fact.
 // For example, to change the default status-tag color:
 //
