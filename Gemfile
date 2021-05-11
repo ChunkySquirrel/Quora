@@ -36,6 +36,7 @@ gem 'activerecord-import', '~> 1.0', '>= 1.0.8'
 # gem 'image_processing', '~> 1.2'
 gem 'groupdate'
 gem "chartkick"
+gem 'gravatar_image_tag', '~> 1.2'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'omniauth', '~> 1.9.1'
 gem 'omniauth-facebook'

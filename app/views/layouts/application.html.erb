@@ -32,12 +32,19 @@
 
     </ul>
     <ul class="navbar-nav ml-auto">
+      <ul>
+  
+						<%= gravatar_image_tag(current_user.email, size: 32, alt: current_user.name) %>
+
+
+      </ul>
       <b>
       <li class="nav-item active">
 
         <%= link_to current_user.name, edit_user_registration_path , :class => "nav-link" if user_signed_in? %>
 
       </li>
+
 </b>
       <li class="nav-item active">
         <%= link_to "Login", new_user_session_path , :class => "nav-link" unless user_signed_in? %>
