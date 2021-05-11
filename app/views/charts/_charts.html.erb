@@ -1,0 +1,31 @@
+<h1 style="text-align:center">Import questions</h1>
+</br>
+</br
+<div style="text-align:center">
+  <%= form_tag import_questions_path, multipart: true do %>
+  <%= file_field_tag :file  %>
+  <%= submit_tag "import"  %>
+  <% end %>
+</div>
+
+
+<h1 style="text-align:center">Charts</h1>
+</br>
+</br>
+
+<h2 style="text-align:center">Chart(Questions created_at)</h2>
+<%= column_chart Question.group_by_day_of_week(:created_at, format: "%a").count %>
+
+</br>
+<h2 style="text-align:center">Chart(Answers created_at)</h2>
+<%= column_chart Answer.group_by_day_of_week(:created_at, format: "%a").count %>
+
+</br>
+<h2 style="text-align:center">Chart (Questions)</h2>
+<%= pie_chart Question.group(:title).count %>
+</br>
+<h2 style="text-align:center">Chart (Answers)</h2>
+<%= pie_chart Answer.group(:body).count %>
+</br>
+<h2 style="text-align:center">Charts (User names)</h2>
+<%= pie_chart User.group(:name).count %>

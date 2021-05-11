@@ -1,0 +1,25 @@
+Rails.application.routes.draw do
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  devise_for :users, :controllers => { :registrations => "registrations", :confirmations => "confirmations", omniauth_callbacks: 'users/omniauth_callbacks'}
+    devise_scope :user do
+      get 'login', to: 'devise/sessions#new'
+    end
+    devise_scope :user do
+      get 'signup', to: 'devise/registrations#new'
+    end
+    devise_scope :user do
+      get '/users/sign_out' => 'devise/sessions#destroy'
+    end
+  resources :questions do
+    resources :answers
+    collection {post :import}
+end
+
+
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  root "questions#index"
+
+end
