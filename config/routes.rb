@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     collection {post :import}
 end
 
-
+  resources :categories
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root "questions#index"

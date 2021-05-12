@@ -3,17 +3,21 @@
 
 <div class="container" align="center">
 
-<p>
-  <%= @question.title.html_safe %>
+  <div class="col-sm" style="max-width:100%; margin:1%;">
+    <div class="card" style="max-width: 100%;background-color:#fafafa;margin:2%;padding:2%;">
+
+  <h1 class="card-title"><%= @question.title.html_safe %></h1>
   <p>Question by <b><%= @question.user.name %></b></p>
-</p>
 
 <% if user_signed_in? && current_user== @question.user %>
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Delete', question_path, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Edit', edit_question_path(@question) %>
+<%= link_to 'Delete', question_path, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <% end %>
+</div>
+</div>
+<h1>Answers</h1>
 
 
 
@@ -27,18 +31,20 @@
 
   <% @question.answers.each do |answer| %>
 
-<div style="border:1px solid black;">
+    <div class="card" style="max-width: 100%;background-color:#fafafa;margin:2%;padding:2%;">
 
-  <p><%= answer.body %></p>
+  <p><%= answer.body.html_safe %></p>
   <b>Answered by <%= answer.user.name %></b>
       <% if current_user == answer.user %>
-      <%= link_to 'Edit  ', edit_question_answer_path(@question, answer) if answer.user == current_user  %> |
+      <%= link_to 'Edit  ', edit_question_answer_path(@question, answer) if answer.user == current_user  %>
       <%= link_to 'Delete', question_answer_path(@question, answer), method: :delete, data: { confirm: 'Are you sure?' }  if answer.user == current_user  %>
       <% end %>
     </div>
 
 
+
  <%end%>
+</div>
 
  <%end%>
 </div>
